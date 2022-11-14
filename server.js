@@ -15,4 +15,4 @@ db.once('open',()=>{console.log("Database connected.")})
 const authRoutes = require('./routes/auth')
 app.use('/auth',authRoutes)
 
-app.listen(port,()=>{console.log(`Server running on port ${port}`);})
+app.listen(process.env.PORT || port,()=>{console.log(`Server running on port ${port}`);})
