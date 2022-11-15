@@ -6,7 +6,7 @@ const port = process.env.PORT
 app.use(express.json())
 
 //Database
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true})
 const db = mongoose.connection
 db.on('error',(error)=>{console.log(error)})
 db.once('open',()=>{console.log("Database connected.")})
